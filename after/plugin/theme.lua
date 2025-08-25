@@ -101,12 +101,13 @@ require('onedark').setup  {
         keywords = 'none',
         functions = 'none',
         strings = 'none',
-        variables = 'none'
+        variables = 'none',
+        bold = false,
     },
 
     -- Lualine options --
     lualine = {
-        transparent = false, -- lualine center bar transparency
+        transparent = true, -- lualine center bar transparency
     },
 
     -- Custom Highlights --
@@ -122,7 +123,7 @@ require('onedark').setup  {
 }
 
 -- color("colorscheme onedark")
-color("colorscheme rose-pine")
+-- color("colorscheme rose-pine")
 -- color("colorscheme rose-pine-main")
--- color("colorscheme rose-pine-moon")
+color("colorscheme rose-pine-moon")
 -- color("colorscheme rose-pine-dawn")

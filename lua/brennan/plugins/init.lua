@@ -13,6 +13,7 @@ return {
 	},
 	{
 		"windwp/nvim-autopairs",
+    enabled = false,
 		event = "InsertEnter",
 		config = true,
 		-- use opts = {} for passing setup options
@@ -102,4 +103,8 @@ return {
 	{
 		"navarasu/onedark.nvim",
 	},
+  {
+    "L3MON4D3/LuaSnip",
+    version = "v2.*",
+  },
 }

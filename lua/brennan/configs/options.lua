@@ -1,7 +1,7 @@
 -- This file is automatically loaded by plugins.core
 
 local opt = vim.opt
-opt.cursorline = true -- Enable highlighting of the current line
+opt.cursorline = false -- Enable highlighting of the current line
 opt.cursorlineopt = "number"
 opt.expandtab = true -- Use spaces instead of tabs
 opt.foldlevel = 99
@@ -25,15 +25,13 @@ opt.updatetime = 200 -- Save swap file and trigger CursorHold
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
-opt.wrap = false -- Disable line wrap
+opt.wrap = true -- Disable line wrap
 opt.shortmess:append("I")
 opt.guicursor = "n-v-c:block,i-ci-ve:block"
 -- opt.fillchars:append({ eob = " " }) -- Replaces ~ with space
 
 opt.nu = true
 opt.smartindent = true
-
-opt.wrap = false
 
 opt.swapfile = false
 opt.backup = false
@@ -45,7 +43,7 @@ opt.incsearch = true
 
 opt.termguicolors = true
 
-opt.scrolloff = 8
+opt.scrolloff = 3
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 

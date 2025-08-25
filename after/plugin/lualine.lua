@@ -1,3 +1,5 @@
+function lualine()
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -60,4 +62,5 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.statusline = " "
   end,
 })
+end
 

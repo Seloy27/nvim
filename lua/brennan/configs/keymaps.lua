@@ -2,14 +2,17 @@
 vim.g.mapleader = " "
 local map = vim.keymap.set
 
+-- map("n", ";", ":")
 map("n", "<C-Up>", ":resize +2<CR>")
 map("n", "<C-Down>", ":resize -2<CR>")
 map("n", "<C-Left>", ":vertical resize -2<CR>")
 map("n", "<C-Right>", ":vertical resize +2<CR>")
 map("n", "<leader>qq", vim.cmd.q)
+map("n", "<leader>fqq", "<cmd> q! <cr>")
 map("n", "<leader>it", ":InspectTree<cr>")
 map("n", "<leader>tp", ":TSPlaygroundToggle<cr>")
 map("n", "<leader>x", "<cmd> bd <cr>")
+map("n", "<leader>fx", "<cmd> bd! <cr>")
 map("n", "<leader>da", "<cmd> %d <cr>")
 map("n", "<leader>e", "<cmd> Ex <cr>")
 -- map("n", "<leader>e", ":NvimTreeToggle <cr>")
