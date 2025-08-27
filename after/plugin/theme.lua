@@ -122,6 +122,15 @@ require('onedark').setup  {
     },
 }
 
+require("night-owl").setup({
+    bold = false,
+    italics = false,
+    underline = false,
+    undercurl = false,
+    transparent_background = true,
+})
+
+-- color("colorscheme night-owl")
 -- color("colorscheme onedark")
 -- color("colorscheme rose-pine")
 -- color("colorscheme rose-pine-main")

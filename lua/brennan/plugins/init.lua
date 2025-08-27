@@ -13,7 +13,7 @@ return {
 	},
 	{
 		"windwp/nvim-autopairs",
-    enabled = false,
+    -- enabled = false,
 		event = "InsertEnter",
 		config = true,
 		-- use opts = {} for passing setup options
@@ -106,5 +106,9 @@ return {
   {
     "L3MON4D3/LuaSnip",
     version = "v2.*",
+  },
+  {
+    "oxfist/night-owl.nvim",
+    lazy = false,
   },
 }

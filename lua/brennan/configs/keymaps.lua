@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- map("n", ";", ":")
+map({"n", "i"}, "<A-w>", vim.cmd.w)
 map("n", "<C-Up>", ":resize +2<CR>")
 map("n", "<C-Down>", ":resize -2<CR>")
 map("n", "<C-Left>", ":vertical resize -2<CR>")
