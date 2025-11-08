@@ -26,7 +26,7 @@ opt.updatetime = 200 -- Save swap file and trigger CursorHold
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
-opt.wrap = true
+-- opt.wrap = true
 opt.linebreak = true
 opt.shortmess:append("I")
 opt.guicursor = "n-v-c:block,i-ci-ve:block"
@@ -48,6 +48,7 @@ opt.incsearch = true
 opt.termguicolors = true
 
 opt.scrolloff = 5
+opt.sidescrolloff = 5
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
@@ -58,8 +59,9 @@ vim.diagnostic.config {
 }
 
 opt.showmode = false
-opt.laststatus = 3
 
 vim.g.undotree_WindowLayout = 2
 vim.g.undotree_SplitWidth = 35
+opt.numberwidth = 1;
+opt.colorcolumn = "100"
 

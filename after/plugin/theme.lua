@@ -16,7 +16,7 @@ rose_pine.setup({
 	styles = {
 		bold = false,
 		italic = false,
-		transparency = false,
+		transparency = true,
 	},
 
   lualine_bold = false,
@@ -93,6 +93,8 @@ require("tokyonight").setup({
   lualine_bold = true,
 })
 
+require("onedark").setup({})
+
 function Solid()
 	rose_pine.setup({
 		styles = {
@@ -129,6 +131,7 @@ function Switch()
 	end)
 end
 
+color("colorscheme onedark")
 -- color("colo tokyonight")
-color("colorscheme rose-pine-main")
+-- color("colorscheme rose-pine-main")
 -- color("colorscheme andromeda")

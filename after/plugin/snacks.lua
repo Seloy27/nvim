@@ -31,6 +31,10 @@ require("snacks").setup({
   --
   -- },
 
+  zen = {
+    width = 900,
+  },
+
   scope = {
     enabled = true, -- enable highlighting the current scope
     priority = 200,
@@ -42,6 +46,7 @@ require("snacks").setup({
 
 	indent = {
 
+    enabled = false,
 		animate = {
 			duration = {
 				step = 0,
