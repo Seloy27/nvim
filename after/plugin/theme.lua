@@ -16,7 +16,7 @@ rose_pine.setup({
 	styles = {
 		bold = false,
 		italic = false,
-		transparency = true,
+		transparency = false,
 	},
 
   lualine_bold = false,
@@ -84,54 +84,26 @@ rose_pine.setup({
 
 require("tokyonight").setup({
   style = "night",
-  transparent = true,
+  transparent = false,
   styles = {
     keywords = { italic = false, bold = false },
     variables = { bold = false },
-    floats = "transparent",
+    -- floats = "transparent",
   },
   lualine_bold = true,
 })
 
-require("onedark").setup({})
 
-function Solid()
-	rose_pine.setup({
-		styles = {
-			transparency = false,
-		},
-	})
+vim.g.rasmus_italic_keywords = false
+vim.g.rasmus_italic_variables = false
+vim.g.rasmus_italic_functions = false
+vim.g.rasmus_italic_comments = false
+vim.g.rasmus_bold_keywords = false
+vim.g.rasmus_bold_booleans = false
+vim.g.rasmus_bold_functions = false
+vim.g.rasmus_transparent = false
 
-	color("color rose-pine-main")
-end
-
-function Transparent()
-	rose_pine.setup({
-		styles = {
-			transparency = true,
-		},
-	})
-
-	color("color rose-pine-main")
-end
-
-function Switch()
-	vim.ui.input({ prompt = "S or T > " }, function(input)
-		if input == "S" then
-			return Solid()
-		elseif input == "T" then
-			return Transparent()
-    elseif input == "s" then
-      return Solid()
-    elseif input == "t" then
-      return Transparent()
-		else
-			return 0
-		end
-	end)
-end
-
-color("colorscheme onedark")
--- color("colo tokyonight")
--- color("colorscheme rose-pine-main")
+-- color("colorscheme rasmus")
+-- color("color tokyonight")
+color("colorscheme rose-pine-main")
 -- color("colorscheme andromeda")

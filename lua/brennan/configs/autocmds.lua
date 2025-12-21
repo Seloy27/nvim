@@ -1,17 +1,19 @@
 
-vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = "*",
-  callback = function ()
-    Snacks.indent.disable()
-  end
-})
+function dim()
 
-vim.api.nvim_create_autocmd('BufEnter', {
+    vim.api.nvim_create_autocmd('BufEnter', {
+        pattern = "*",
+        callback = function ()
+            Snacks.dim.disable()
+        end
+    })
 
-  pattern = "*.html",
-  callback = function ()
+    vim.api.nvim_create_autocmd('BufEnter', {
 
-    Snacks.indent.enable()
-  end
-})
+        pattern = "*.html",
+        callback = function ()
 
+            Snacks.dim.enable()
+        end
+    })
+end

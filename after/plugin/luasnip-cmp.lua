@@ -1,7 +1,12 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
-require("luasnip.loaders.from_vscode").lazy_load() -- loads friendly-snippets
+require("luasnip.loaders.from_vscode").lazy_load({
+  paths = {
+    vim.fn.stdpath("config") .. "/custom-snippets",
+    "~/.local/share/nvim/lazy/friendly-snippets",
+  },
+})
 
 cmp.setup({
 	window = {

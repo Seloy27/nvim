@@ -15,10 +15,10 @@ opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number
 opt.relativenumber = true -- Relative line numbers
 opt.ruler = false -- Disable the default ruler
-opt.shiftwidth = 2 -- Size of an indent
+opt.shiftwidth = 4 -- Size of an indent
 opt.spelllang = { "en" }
-opt.tabstop = 2 -- Number of spaces tabs count for
-opt.softtabstop = 2
+opt.tabstop = 4 -- Number of spaces tabs count for
+opt.softtabstop = 4
 opt.termguicolors = true -- True color support
 opt.undofile = true
 opt.undolevels = 10000
@@ -29,7 +29,6 @@ opt.winminwidth = 5 -- Minimum window width
 -- opt.wrap = true
 opt.linebreak = true
 opt.shortmess:append("I")
-opt.guicursor = "n-v-c:block,i-ci-ve:block"
 opt.linespace = 3
 opt.fillchars:append({ eob = " " }) -- Replaces ~ with space
 
@@ -58,10 +57,37 @@ vim.diagnostic.config {
   underline = true,
 }
 
+vim.diagnostic.enable(false)
+
 opt.showmode = false
 
 vim.g.undotree_WindowLayout = 2
 vim.g.undotree_SplitWidth = 35
 opt.numberwidth = 1;
-opt.colorcolumn = "100"
+opt.colorcolumn = "110"
 
+local sleep = 200
+
+function black()
+    vim.defer_fn(function()
+
+        vim.api.nvim_set_hl(0, "Cursor", {
+            bg = "#e0def4"
+        })
+        yellow()
+    end, sleep)
+end
+
+function yellow()
+    vim.defer_fn(function()
+
+        vim.api.nvim_set_hl(0, "Cursor", {
+            bg = "#eb6f92"
+        })
+        black()
+    end, sleep)
+end
+
+opt.guicursor = "n-i-v-c:block-Cursor,"
+
+black()

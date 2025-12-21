@@ -19,34 +19,39 @@ require("ibl").setup({
 
 require("snacks").setup({
 
-  -- input = {},
+	-- input = {},
 
-  quickfile = {
+	quickfile = {},
 
-  },
+	-- bigfile = {},
 
-  -- bigfile = {},
+	-- explorer = {
+	--
+	-- },
 
-  -- explorer = {
-  --
-  -- },
+    dim = {
+        animate = {
 
-  zen = {
-    width = 900,
-  },
+            enabled = vim.fn.has("nvim-0.10") == 0;
+        },
+    },
 
-  scope = {
-    enabled = true, -- enable highlighting the current scope
-    priority = 200,
-    char = "│",
-    underline = false, -- underline the start of the scope
-    only_current = false, -- only show scope in the current window
-    hl = "SnacksIndentScope", ---@type string|string[] hl group for scopes
-  },
+	zen = {
+		width = 900,
+	},
+
+	scope = {
+		enabled = true, -- enable highlighting the current scope
+		priority = 200,
+		char = "│",
+		underline = false, -- underline the start of the scope
+		only_current = false, -- only show scope in the current window
+		hl = "SnacksIndentScope", ---@type string|string[] hl group for scopes
+	},
 
 	indent = {
 
-    enabled = false,
+		enabled = false,
 		animate = {
 			duration = {
 				step = 0,
