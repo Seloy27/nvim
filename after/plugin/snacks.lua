@@ -38,6 +38,13 @@ require("snacks").setup({
 
 	zen = {
 		width = 900,
+        toggles = {
+
+            dim = false,
+        },
+        zoom = {
+            backdrop = true,
+        },
 	},
 
 	scope = {
@@ -62,3 +69,7 @@ require("snacks").setup({
 })
 
 -- Snacks.input.enable()
+
+vim.keymap.set("n", "<leader>z", function ()
+    Snacks.zen()
+end)

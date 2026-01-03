@@ -37,7 +37,7 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         lazy = true,
-        -- dependencies = { "nvim-tree/nvim-web-devicons" },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
     {
         -- LSP Support
@@ -91,10 +91,6 @@ return {
     },
     {
         "hedyhli/outline.nvim",
-        config = function()
-            -- Example mapping to toggle outline
-            vim.keymap.set("n", "<leader>o", "<cmd>topleft Outline<CR>")
-        end,
     },
     {
         "lewis6991/gitsigns.nvim",
@@ -107,12 +103,16 @@ return {
     {
         'kdheepak/monochrome.nvim',
     },
-    {  
+    {
         "kvrohit/rasmus.nvim",
         priority = 1000,
     },
     {
         'datsfilipe/vesper.nvim',
         priority = 1000,
-    }
+    },
+    {
+        "nvim-tree/nvim-tree.lua",
+        lazy = false,
+    },
 }

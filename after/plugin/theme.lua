@@ -106,4 +106,4 @@ vim.g.rasmus_transparent = false
 -- color("colorscheme rasmus")
 -- color("color tokyonight")
 color("colorscheme rose-pine-main")
--- color("colorscheme andromeda")
+-- color("colorscheme andromeda"o

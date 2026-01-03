@@ -16,3 +16,7 @@ map("n", "<A-6>", function() ui.nav_file(6) end)
 map("n", "<A-7>", function() ui.nav_file(7) end)
 map("n", "<A-8>", function() ui.nav_file(8) end)
 map("n", "<A-9>", function() ui.nav_file(9) end)
+
+map("n", "<A-`>", function()
+    require("harpoon.term").gotoTerminal(1)
+end)

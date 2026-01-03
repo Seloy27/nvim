@@ -57,37 +57,50 @@ vim.diagnostic.config {
   underline = true,
 }
 
-vim.diagnostic.enable(false)
+-- hide diagnostic 
+function diag()
+    if (not vim.diagnostic.is_enabled()) then
+        vim.diagnostic.enable()
+    else
+        vim.diagnostic.enable(false)
+    end
+
+end
+diag()
 
 opt.showmode = false
-
-vim.g.undotree_WindowLayout = 2
+vim.g.undotree_WindowLayout = 3
 vim.g.undotree_SplitWidth = 35
-opt.numberwidth = 1;
+opt.numberwidth = 1
 opt.colorcolumn = "110"
+opt.laststatus = 3
 
-local sleep = 200
+function cursorBlink()
+    local sleep = 200
 
-function black()
-    vim.defer_fn(function()
+    function black()
+        vim.defer_fn(function()
 
-        vim.api.nvim_set_hl(0, "Cursor", {
-            bg = "#e0def4"
-        })
-        yellow()
-    end, sleep)
+            vim.api.nvim_set_hl(0, "Cursor", {
+                bg = "#e0def4"
+            })
+            yellow()
+        end, sleep)
+    end
+
+    function yellow()
+        vim.defer_fn(function()
+
+            vim.api.nvim_set_hl(0, "Cursor", {
+                bg = "#eb6f92"
+            })
+            black()
+        end, sleep)
+    end
+
+
+    black()
 end
 
-function yellow()
-    vim.defer_fn(function()
-
-        vim.api.nvim_set_hl(0, "Cursor", {
-            bg = "#eb6f92"
-        })
-        black()
-    end, sleep)
-end
-
+cursorBlink()
 opt.guicursor = "n-i-v-c:block-Cursor,"
-
-black()
