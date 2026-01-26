@@ -66,7 +66,6 @@ function diag()
     end
 
 end
-diag()
 
 opt.showmode = false
 vim.g.undotree_WindowLayout = 3

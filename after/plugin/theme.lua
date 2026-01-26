@@ -1,5 +1,6 @@
 local color = vim.cmd
 local rose_pine = require("rose-pine")
+local c = require('vscode.colors').get_colors()
 
 rose_pine.setup({
 	variant = "auto", -- auto, main, moon, or dawn
@@ -93,17 +94,47 @@ require("tokyonight").setup({
   lualine_bold = true,
 })
 
+require("vscode").setup ({
+    -- transparent = true,
+    transparent = true,
 
-vim.g.rasmus_italic_keywords = false
-vim.g.rasmus_italic_variables = false
-vim.g.rasmus_italic_functions = false
-vim.g.rasmus_italic_comments = false
-vim.g.rasmus_bold_keywords = false
-vim.g.rasmus_bold_booleans = false
-vim.g.rasmus_bold_functions = false
-vim.g.rasmus_transparent = false
+    -- Enable italic comment
+    italic_comments = false,
 
--- color("colorscheme rasmus")
+    -- Enable italic inlay type hints
+    italic_inlayhints = false,
+
+    -- Underline `@markup.link.*` variants
+    underline_links = true,
+
+    -- Disable nvim-tree background color
+    disable_nvimtree_bg = true,
+
+    -- Apply theme colors to terminal
+    terminal_colors = true,
+
+    -- Override colors (see ./lua/vscode/colors.lua)
+    color_overrides = {
+        vscLineNumber = '#FFFFFF',
+    },
+
+    -- Override highlight groups (see ./lua/vscode/theme.lua)
+    group_overrides = {
+        -- this supports the same val table as vim.api.nvim_set_hl
+        -- use colors from this colorscheme by requiring vscode.colors!
+        Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
+    }
+})
+
+function Transparent(color)
+    color = color or "rose-pine-main"
+    vim.cmd.colorscheme(color)
+
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none", })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", })
+end
+
+Transparent()
+
 -- color("color tokyonight")
-color("colorscheme rose-pine-main")
--- color("colorscheme andromeda"o
+-- color("colorscheme vscode")

@@ -1,58 +1,60 @@
+
 vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- map("n", ";", ":")
 map("n", "<C-Up>", function()
-    vim.cmd("resize +2<CR>")
+	vim.cmd("resize +2<CR>")
 end)
 map("n", "<C-Down>", function()
-    vim.cmd("resize -2<CR>")
+	vim.cmd("resize -2<CR>")
 end)
 map("n", "<C-Left>", function()
-    vim.cmd("vertical resize -2<CR>")
+	vim.cmd("vertical resize -2<CR>")
 end)
 map("n", "<C-Right>", function()
-    vim.cmd("vertical resize +2<CR>")
+	vim.cmd("vertical resize +2<CR>")
 end)
 map("n", "<leader>q", function()
-    vim.cmd("qa")
+	vim.cmd("qa")
 end)
 map("n", "<leader>fq", function()
-    vim.cmd("qa!")
+	vim.cmd("qa!")
 end)
 map("n", "<leader>it", function()
-    vim.cmd("InspectTree")
+	vim.cmd("InspectTree")
 end)
 map("n", "<leader>tp", function()
-    vim.cmd("TSPlaygroundToggle")
+	vim.cmd("TSPlaygroundToggle")
 end)
 map("n", "<leader>x", function()
-    vim.cmd("bd")
+	vim.cmd("OutlineClose")
+	vim.cmd("bd")
 end)
 map("n", "<leader>fx", function()
-    vim.cmd("bd!")
+	vim.cmd("bd!")
 end)
 map("n", "<leader>da", function()
-    vim.cmd("%d")
+	vim.cmd("%d")
 end)
 
 map("n", "<leader>ps", function()
-    vim.cmd("Lazy sync")
+	vim.cmd("Lazy sync")
 end)
 map("n", "<leader>pm", function()
-    vim.cmd("Lazy")
+	vim.cmd("Lazy")
 end)
 
 map("n", "<A-l>", function()
-    vim.cmd("normal! 10zl")
+	vim.cmd("normal! 10zl")
 end)
 map("n", "<A-h>", function()
-    vim.cmd("normal! 10zh")
+	vim.cmd("normal! 10zh")
 end)
 
 map("n", "<leader>u", function()
-    vim.cmd("OutlineClose")
-    vim.cmd("UndotreeToggle")
+	vim.cmd("OutlineClose")
+	vim.cmd("UndotreeToggle")
 end)
 
 map({ "n", "x" }, "<leader>fm", function()
@@ -65,23 +67,14 @@ map("n", "<leader>sw", function()
 	end)
 end)
 
-map('n', "<leader>tn", function()
-    vim.cmd("tabnew | NvimTreeFocus<cr>")
+map("n", "<leader>tn", function()
+	vim.cmd("tabnew | NvimTreeFocus<cr>")
 end)
-
-map("n", "<leader>m", function()
-  vim.diagnostic.setloclist()
-end)
-
-map("t", "<C-x>", "<C-\\><C-N>")
 
 map("n", "<leader>nm", function()
-
-  if not vim.opt.modifiable:get() == false  then
-    vim.opt.modifiable = false
-    print("modifiable is set to ", vim.opt.modifiable:get())
-  else
-    vim.opt.modifiable = true
-    print("modifiable is set to ", vim.opt.modifiable:get())
-  end
+	if not vim.opt.modifiable:get() == false then
+		vim.opt.modifiable = false
+	else
+		vim.opt.modifiable = true
+	end
 end)

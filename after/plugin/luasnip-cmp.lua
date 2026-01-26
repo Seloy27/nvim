@@ -2,32 +2,35 @@ local cmp = require("cmp")
 local luasnip = require("luasnip")
 
 require("luasnip.loaders.from_vscode").lazy_load({
-  paths = {
-    vim.fn.stdpath("config") .. "/custom-snippets",
-    "~/.local/share/nvim/lazy/friendly-snippets",
-  },
+	paths = {
+		"~/.local/share/nvim/lazy/friendly-snippets",
+        "~/.config/nvim/my-snippets",
+	},
 })
 
 cmp.setup({
 	window = {
-		completion = cmp.config.window.bordered(),
-    max_width = 40,
-		documentation = cmp.config.window.bordered({
-      max_height = 15,
-		}),
+		completion = {
+            border = "rounded",
+            max_height = 20,
+            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel"
+        },
+		documentation = {
+            border = "single",
+        },
 	},
 
-  formatting = {
-    fields = { 'abbr', 'kind', 'menu' },
-    format = function(entry, vim_item)
-      vim_item.abbr = string.sub(vim_item.abbr, 1, 30) -- shorten long items
-      return vim_item
-    end,
-  },
+	formatting = {
+		fields = { "abbr", "kind", "menu" },
+		format = function(entry, vim_item)
+			vim_item.abbr = string.sub(vim_item.abbr, 1, 30) -- shorten long items
+			return vim_item
+		end,
+	},
 
-  -- performance = {
-  --   max_view_entries = 15,
-  -- },
+	-- performance = {
+	--   max_view_entries = 15,
+	-- },
 
 	snippet = {
 		expand = function(args)
@@ -35,7 +38,7 @@ cmp.setup({
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-    ["<C-Space>"] = cmp.mapping.complete(),
+		["<C-Space>"] = cmp.mapping.complete(),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -66,8 +69,8 @@ cmp.setup({
 	}),
 
 	auto_brackets = {}, -- configure any filetype to auto add brackets
-  -- experimental = {
-  --   ghost_text = true,
-  -- }
+	-- experimental = {
+	--   ghost_text = true,
+	-- }
 })
 

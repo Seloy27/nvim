@@ -3,41 +3,39 @@ return {
     {
         "rose-pine/neovim",
         name = "rose-pine",
-        priority = 1000,
+        priority = 1000
     },
     {
         "folke/tokyonight.nvim",
         lazy = true,
         priority = 1000,
-        opts = {},
+        opts = {}
     },
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         ---@module "ibl"
         ---@type ibl.config
-        opts = {},
+        opts = {}
     },
     {
         "windwp/nvim-autopairs",
         enabled = false,
         event = "InsertEnter",
-        config = true,
-        -- use opts = {} for passing setup options
-        -- this is equivalent to setup({}) function
+        config = true
     },
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        dependencies = { "nvim-lua/plenary.nvim" }
     },
     {
-        "ThePrimeagen/harpoon",
+        "ThePrimeagen/harpoon"
     },
     {
         "nvim-lualine/lualine.nvim",
         lazy = true,
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        dependencies = { "nvim-tree/nvim-web-devicons" }
     },
     {
         -- LSP Support
@@ -45,7 +43,7 @@ return {
         enable = true,
         dependencies = {
             "williamboman/mason-lspconfig.nvim",
-        },
+        }
     },
     {
         "hrsh7th/nvim-cmp",
@@ -55,21 +53,21 @@ return {
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
             "saadparwaiz1/cmp_luasnip",
-            "L3MON4D3/LuaSnip",
-        },
+            "L3MON4D3/LuaSnip"
+        }
     },
     {
         "williamboman/mason.nvim",
         enable = true,
         cmd = { "Mason", "MasonInstall", "MasonUpdate" },
-        lazy = false,
+        lazy = false
     },
     {
         "stevearc/conform.nvim",
-        opts = {},
+        opts = {}
     },
     {
-        "rafamadriz/friendly-snippets",
+        "rafamadriz/friendly-snippets"
     },
     {
         "nvim-treesitter/nvim-treesitter",
@@ -77,42 +75,46 @@ return {
         lazy = false,
         build = ":TSUpdate",
         dependencies = {
-            "nvim-treesitter/playground",
-        },
+            "nvim-treesitter/playground"
+        }
     },
     {
         "mbbill/undotree",
-        lazy = false,
+        lazy = false
     },
     {
         "L3MON4D3/LuaSnip",
         version = "v2.*",
-        dependencies = { "rafamadriz/friendly-snippets" },
+        dependencies = { "rafamadriz/friendly-snippets" }
     },
     {
-        "hedyhli/outline.nvim",
+        "hedyhli/outline.nvim"
     },
     {
         "lewis6991/gitsigns.nvim",
-        lazy = true,
+        lazy = true
     },
     {
         "folke/snacks.nvim",
-        lazy = false,
+        lazy = false
     },
     {
-        'kdheepak/monochrome.nvim',
-    },
-    {
-        "kvrohit/rasmus.nvim",
-        priority = 1000,
+        'kdheepak/monochrome.nvim'
     },
     {
         'datsfilipe/vesper.nvim',
-        priority = 1000,
+        priority = 1000
     },
     {
         "nvim-tree/nvim-tree.lua",
-        lazy = false,
+        lazy = false
     },
+    {
+        'Mofiqul/vscode.nvim',
+        lazy = false
+    },
+    {
+        "folke/zen-mode.nvim",
+        lazy = true
+    }
 }
