@@ -15,10 +15,7 @@ opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number
 opt.relativenumber = true -- Relative line numbers
 opt.ruler = false -- Disable the default ruler
-opt.shiftwidth = 4 -- Size of an indent
 opt.spelllang = { "en" }
-opt.tabstop = 4 -- Number of spaces tabs count for
-opt.softtabstop = 4
 opt.termguicolors = true -- True color support
 opt.undofile = true
 opt.undolevels = 10000
@@ -56,16 +53,7 @@ vim.diagnostic.config {
   signs = false,
   underline = true,
 }
-
--- hide diagnostic 
-function diag()
-    if (not vim.diagnostic.is_enabled()) then
-        vim.diagnostic.enable()
-    else
-        vim.diagnostic.enable(false)
-    end
-
-end
+vim.diagnostic.hide()
 
 opt.showmode = false
 vim.g.undotree_WindowLayout = 3
@@ -74,7 +62,7 @@ opt.numberwidth = 1
 opt.colorcolumn = "110"
 opt.laststatus = 3
 
-function cursorBlink()
+local function cursorBlink()
     local sleep = 200
 
     function black()

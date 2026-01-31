@@ -40,7 +40,7 @@ return {
     {
         -- LSP Support
         "neovim/nvim-lspconfig",
-        enable = true,
+        enabled = true,
         dependencies = {
             "williamboman/mason-lspconfig.nvim",
         }
@@ -58,7 +58,7 @@ return {
     },
     {
         "williamboman/mason.nvim",
-        enable = true,
+        enabled = true,
         cmd = { "Mason", "MasonInstall", "MasonUpdate" },
         lazy = false
     },
@@ -116,5 +116,10 @@ return {
     {
         "folke/zen-mode.nvim",
         lazy = true
+    },
+    {
+        'akinsho/bufferline.nvim',
+        lazy = false
+        -- enabled = false
     }
 }
