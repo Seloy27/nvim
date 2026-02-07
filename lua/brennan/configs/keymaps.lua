@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- map("n", ";", ":")
+map("n", "<leader>e", vim.cmd.Ex)
 map("n", "<C-Up>", function()
 	vim.cmd("resize +2<CR>")
 end)

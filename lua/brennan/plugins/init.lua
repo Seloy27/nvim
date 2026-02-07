@@ -106,10 +106,6 @@ return {
         priority = 1000
     },
     {
-        "nvim-tree/nvim-tree.lua",
-        lazy = false
-    },
-    {
         'Mofiqul/vscode.nvim',
         lazy = false
     },
@@ -119,7 +115,11 @@ return {
     },
     {
         'akinsho/bufferline.nvim',
-        lazy = false
+        lazy = true
         -- enabled = false
+    },
+    {
+        'kdheepak/tabline.nvim',
+        lazy = true
     }
 }

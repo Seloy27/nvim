@@ -1,5 +1,7 @@
 local lualine = require("lualine")
 
+local   muted   = "#6e6a86"
+local   gold    = "#f6c177"
 lualine.setup({
 	options = {
 		icons_enabled = false,
@@ -35,8 +37,10 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { "branch", "diff" },
-		lualine_c = { { "filename", path = 1 } },
+		lualine_b = { { "branch", separator = { right = "|"} }, "diff" },
+
+		lualine_c = {  { "filename", path = 1, color = { fg = muted } } },
+
 		lualine_x = { "encoding" },
 		lualine_y = { "location", "progress" },
 		lualine_z = {},
@@ -54,3 +58,4 @@ lualine.setup({
 	inactive_winbar = {},
 	extensions = {},
 })
+
