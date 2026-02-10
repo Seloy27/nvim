@@ -6,8 +6,12 @@ local   function Init()
 bufferline.setup({
     options = {
 
+        tab_size = 1,
         show_buffer_icons = false,
+        max_name_length = 1,
+        truncate_names = false,
         style_preset = bufferline.style_preset.no_italic,
+        enforece_regular_tabs = true,
 
         offsets = {
             {
@@ -16,6 +20,12 @@ bufferline.setup({
                 highlight = "Directory",
                 separator = true
             }
+        },
+
+        hover = {
+            enabled = true,
+            delay   = 200,
+            reveal  = { "close" }
         },
 
         numbers = "ordinal"

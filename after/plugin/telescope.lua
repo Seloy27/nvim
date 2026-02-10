@@ -46,7 +46,7 @@ map("n", "<leader>fd", function()
 	outline.focus_code()
 	builtin.diagnostics({
         bufnr = 0,
-        -- previewer = false
+        previewer = false
     })
 end)
 

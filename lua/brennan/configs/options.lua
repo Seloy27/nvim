@@ -28,6 +28,7 @@ opt.linebreak = true
 opt.shortmess:append("I")
 opt.linespace = 3
 opt.fillchars:append({ eob = " " }) -- Replaces ~ with space
+opt.mousemev = true
 
 opt.nu = true
 opt.autoindent = true

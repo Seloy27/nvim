@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd(
         callback = function()
             if vim.bo.filetype == "netrw" then
                 vim.defer_fn(function()
-                    for i = 1, 9 do
+                    for i = 1, 50 do
                         require("harpoon.ui").nav_file(i)
                     end
                     vim.cmd("Ex")
