@@ -1,9 +1,7 @@
 local map = vim.keymap.set
 local builtin = require("telescope.builtin")
-local pv = require("telescope.previewers")
 local outline = require("outline")
 
-local new_previewer = pv.Previewer:new()
 map("n", "<leader>ft", builtin.colorscheme)
 
 map("n", "<leader>fa", function()
@@ -17,7 +15,14 @@ end)
 
 map("n", "<leader>fw", function()
 	outline.focus_code()
-	builtin.current_buffer_fuzzy_find()
+	builtin.current_buffer_fuzzy_find({
+        layout_config = {
+            horizontal = {
+                width = 120,
+                preview_width = 70
+            }
+        }
+    })
 end)
 
 map("n", "<leader>ff", function()
@@ -29,7 +34,14 @@ end)
 
 map("n", "<leader>fg", function()
 	outline.focus_code()
-	builtin.live_grep()
+	builtin.live_grep({
+        layout_config = {
+            horizontal = {
+                width = 120,
+                preview_width = 70
+            }
+        }
+    })
 end)
 
 map("n", "<leader>fb", function()

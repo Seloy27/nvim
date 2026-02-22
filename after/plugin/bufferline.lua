@@ -12,6 +12,8 @@ bufferline.setup({
         truncate_names = false,
         style_preset = bufferline.style_preset.no_italic,
         enforece_regular_tabs = true,
+        always_show_bufferline = false,
+        numbers = "ordinal",
 
         offsets = {
             {
@@ -24,11 +26,9 @@ bufferline.setup({
 
         hover = {
             enabled = true,
-            delay   = 200,
+            delay   = 50,
             reveal  = { "close" }
-        },
-
-        numbers = "ordinal"
+        }
     }
 })
 
@@ -42,10 +42,8 @@ map("n", "<A-7>", function() vim.cmd("BufferLineGoToBuffer 7") end)
 map("n", "<A-8>", function() vim.cmd("BufferLineGoToBuffer 8") end)
 map("n", "<A-9>", function() vim.cmd("BufferLineGoToBuffer 9") end)
 
-map("n", "<CA-h>", function() vim.cmd("BufferLineMovePrev") end)
-map("n", "<CA-l>", function() vim.cmd("BufferLineMoveNext") end)
-map("n", "<C-h>", function() vim.cmd("BufferLineCyclePrev") end)
-map("n", "<C-l>", function() vim.cmd("BufferLineCycleNext") end)
+map("n", "<CA-Left>", function() vim.cmd("BufferLineMovePrev") end)
+map("n", "<CA-Right>", function() vim.cmd("BufferLineMoveNext") end)
 end
 Init()
 

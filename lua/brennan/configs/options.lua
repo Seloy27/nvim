@@ -5,7 +5,6 @@ local opt = vim.opt
 opt.cursorline = true -- Enable highlighting of the current line
 opt.cursorlineopt = "number"
 opt.expandtab = true -- Use spaces instead of tabs
-opt.foldlevel = 99
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
 opt.ignorecase = true -- Ignore case
@@ -28,6 +27,7 @@ opt.linebreak = true
 opt.shortmess:append("I")
 opt.linespace = 3
 opt.fillchars:append({ eob = " " }) -- Replaces ~ with space
+opt.fillchars:append({ fold = " " }) -- Replaces ~ with space
 opt.mousemev = true
 
 opt.nu = true
@@ -63,32 +63,3 @@ opt.numberwidth = 1
 opt.colorcolumn = "110"
 opt.laststatus = 3
 
-local function cursorBlink()
-    local sleep = 200
-
-    function black()
-        vim.defer_fn(function()
-
-            vim.api.nvim_set_hl(0, "Cursor", {
-                bg = "#e0def4"
-            })
-            yellow()
-        end, sleep)
-    end
-
-    function yellow()
-        vim.defer_fn(function()
-
-            vim.api.nvim_set_hl(0, "Cursor", {
-                bg = "#eb6f92"
-            })
-            black()
-        end, sleep)
-    end
-
-
-    black()
-end
-
-cursorBlink()
-opt.guicursor = "n-i-v-c:block-Cursor,"

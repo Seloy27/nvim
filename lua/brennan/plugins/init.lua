@@ -6,12 +6,6 @@ return {
         priority = 1000
     },
     {
-        "folke/tokyonight.nvim",
-        lazy = true,
-        priority = 1000,
-        opts = {}
-    },
-    {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         ---@module "ibl"
@@ -106,7 +100,7 @@ return {
         priority = 1000
     },
     {
-        'Mofiqul/vscode.nvim',
+        "navarasu/onedark.nvim",
         lazy = false
     },
     {

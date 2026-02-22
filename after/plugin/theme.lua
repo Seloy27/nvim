@@ -1,6 +1,7 @@
-local color = vim.cmd
+
+
+
 local rose_pine = require("rose-pine")
-local c = require('vscode.colors').get_colors()
 
 rose_pine.setup({
 	variant = "auto", -- auto, main, moon, or dawn
@@ -65,9 +66,9 @@ rose_pine.setup({
 	-- per group via `inherit = false`
 	highlight_groups = {
 		-- Comment = { fg = "foam" },
-		StatusLine = { fg = "love", bg = "foam", blend = 15 },
+		-- StatusLine = { fg = "love", bg = "foam", blend = 15 },
 		-- VertSplit = { fg = "love", bg = "love" },
-		-- Visual = { fg = "base", bg = "text", inherit = false },
+		Visual = { fg = "base", bg = "foam", inherit = false },
 	},
 
 	before_highlight = function(group, highlight, palette)
@@ -83,58 +84,47 @@ rose_pine.setup({
 	end,
 })
 
-require("tokyonight").setup({
-  style = "night",
-  transparent = false,
-  styles = {
-    keywords = { italic = false, bold = false },
-    variables = { bold = false },
-    -- floats = "transparent",
-  },
-  lualine_bold = true,
+require("onedark").setup({
+    style = "darker"
 })
 
-require("vscode").setup ({
-    -- transparent = true,
-    transparent = true,
-
-    -- Enable italic comment
-    italic_comments = false,
-
-    -- Enable italic inlay type hints
-    italic_inlayhints = false,
-
-    -- Underline `@markup.link.*` variants
-    underline_links = true,
-
-    -- Disable nvim-tree background color
-    disable_nvimtree_bg = true,
-
-    -- Apply theme colors to terminal
-    terminal_colors = true,
-
-    -- Override colors (see ./lua/vscode/colors.lua)
-    color_overrides = {
-        vscLineNumber = '#FFFFFF',
-    },
-
-    -- Override highlight groups (see ./lua/vscode/theme.lua)
-    group_overrides = {
-        -- this supports the same val table as vim.api.nvim_set_hl
-        -- use colors from this colorscheme by requiring vscode.colors!
-        Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
-    }
-})
-
-function Transparent(color)
+function Tcolorscheme(color)
     color = color or "rose-pine-main"
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(0, "Normal", { bg = "none", })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", })
 end
+Tcolorscheme()
 
-Transparent()
+local function cursorBlink()
+    local sleep = 200
 
--- color("color tokyonight")
--- color("colorscheme vscode")
+    function black()
+        vim.defer_fn(function()
+
+            vim.api.nvim_set_hl(0, "Cursor", {
+                bg = "#e0def4"
+            })
+            yellow()
+        end, sleep)
+    end
+
+    function yellow()
+        vim.defer_fn(function()
+
+            vim.api.nvim_set_hl(0, "Cursor", {
+                bg = "#eb6f92"
+            })
+            black()
+        end, sleep)
+    end
+
+
+    black()
+end
+cursorBlink()
+vim.opt.guicursor = "n-i-v-c:block-Cursor,"
+
+
+

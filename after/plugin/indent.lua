@@ -52,5 +52,5 @@ function Indent( indent , char , tab )
     vim.opt.softtabstop = tab
     vim.opt.shiftwidth = tab
 end
-Indent( nil , "" , 4 )
+Indent()
 
