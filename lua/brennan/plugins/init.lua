@@ -115,5 +115,9 @@ return {
     {
         'kdheepak/tabline.nvim',
         lazy = true
-    }
+    },
+	{
+		"karb94/neoscroll.nvim",
+		lazy = false
+	}
 }

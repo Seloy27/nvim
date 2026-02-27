@@ -2,7 +2,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 
 local function au()
-vim.api.nvim_create_autocmd(
+autocmd(
     "UIEnter",
     {
         pattern = "*",
@@ -16,8 +16,27 @@ vim.api.nvim_create_autocmd(
                     vim.cmd("Ex")
                     vim.cmd("bd 1") -- only if netrw
                     -- require("harpoon.ui").nav_file(1)
-                end, 100)
+                end, 1)
             end
+        end
+    }
+)
+
+autocmd(
+    "BufEnter",
+    {
+        pattern = "*.html",
+        callback = function ()
+            vim.opt.wrap = false
+        end
+    }
+)
+autocmd(
+    "BufLeave",
+    {
+        pattern = "*.html",
+        callback = function ()
+            vim.opt.wrap = true
         end
     }
 )

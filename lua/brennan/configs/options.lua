@@ -2,37 +2,36 @@
 
 local opt = vim.opt
 
-opt.cursorline = true -- Enable highlighting of the current line
+opt.cursorline = true
 opt.cursorlineopt = "number"
-opt.expandtab = true -- Use spaces instead of tabs
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
-opt.ignorecase = true -- Ignore case
-opt.inccommand = "nosplit" -- preview incremental substitute
+opt.ignorecase = true
+opt.inccommand = "nosplit"
 opt.jumpoptions = "view"
-opt.mouse = "a" -- Enable mouse mode
-opt.number = true -- Print line number
-opt.relativenumber = true -- Relative line numbers
-opt.ruler = false -- Disable the default ruler
+opt.mouse = ""
+opt.number = true
+opt.relativenumber = true
+opt.ruler = false
 opt.spelllang = { "en" }
-opt.termguicolors = true -- True color support
+opt.termguicolors = true
 opt.undofile = true
 opt.undolevels = 10000
-opt.updatetime = 200 -- Save swap file and trigger CursorHold
-opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
-opt.wildmode = "longest:full,full" -- Command-line completion mode
-opt.winminwidth = 5 -- Minimum window width
+opt.updatetime = 200
+opt.virtualedit = "block"
+opt.wildmode = "longest:full,full"
+opt.winminwidth = 5
 -- opt.wrap = true
 opt.linebreak = true
 opt.shortmess:append("I")
 opt.linespace = 3
-opt.fillchars:append({ eob = " " }) -- Replaces ~ with space
-opt.fillchars:append({ fold = " " }) -- Replaces ~ with space
+opt.fillchars:append({ fold = " " })
 opt.mousemev = true
 
 opt.nu = true
 opt.autoindent = true
 opt.smartindent = true
+opt.expandtab = false
 
 opt.swapfile = false
 opt.backup = false
@@ -44,8 +43,8 @@ opt.incsearch = true
 
 opt.termguicolors = true
 
-opt.scrolloff = 5
-opt.sidescrolloff = 5
+opt.scrolloff = 8
+opt.sidescrolloff = 30
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
