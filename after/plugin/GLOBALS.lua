@@ -1,7 +1,6 @@
 
 --
--- GLOBAL
--- Removes view file of current buffer directory "stdpath("state")/view/"
+-- GLOBAL FUNCTION DEFINITIONS
 --
 
 function RemoveView()
@@ -15,6 +14,5 @@ function RemoveView()
 	end
 
 	os.remove(viewPath..viewFile())
-	print(viewPath..viewFile())
 end
 

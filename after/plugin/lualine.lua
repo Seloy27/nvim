@@ -1,7 +1,9 @@
 local lualine = require("lualine")
+local function FILENAME()
+	local file = vim.fn.expand("%:.")
+	return string.gsub(file, "(%a*%_*%a+)(%p?)(%w*)$", "")
+end
 
-local   muted   = "#6e6a86"
-local   gold    = "#f6c177"
 lualine.setup({
 	options = {
 		icons_enabled = false,
@@ -11,6 +13,7 @@ lualine.setup({
 		disabled_filetypes = {
 			statusline = {},
 			winbar = {},
+			netrw = {}
 		},
 		ignore_focus = { "NvimTree", "OUTLINE_1" },
 		always_divide_middle = true,
@@ -37,22 +40,14 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { { "branch", separator = { right = "|"} }, "diff" },
+		lualine_b = { { "branch", separator = { right = "|" } }, "diff" },
 
-		lualine_c = {  { "filename", path = 1, color = { fg = muted } } },
+		lualine_c = { { FILENAME, separator = { right = "" } }, { "filename", color = {fg ="#f6c177"}, separator = { left = "" } } },
 
 		lualine_x = { "encoding" },
 		lualine_y = { "location", "progress" },
 		lualine_z = {},
 	},
-	-- inactive_sections = {
-	--   lualine_a = {'mode'},
-	--   lualine_b = {'branch', 'diff', 'diagnostics'},
-	--   lualine_c = {'filename'},
-	--   lualine_x = {'location'},
-	--   lualine_y = {},
-	--   lualine_z = {}
-	-- },
 	tabline = {},
 	winbar = {},
 	inactive_winbar = {},

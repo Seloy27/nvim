@@ -2,7 +2,8 @@
 local   bufferline = require("bufferline")
 local   map = vim.keymap.set
 
-local   function Init()
+vim.opt.mousemev = true
+
 bufferline.setup({
     options = {
 
@@ -26,7 +27,7 @@ bufferline.setup({
 
         hover = {
             enabled = true,
-            delay   = 50,
+            delay   = 0,
             reveal  = { "close" }
         }
     }
@@ -44,6 +45,4 @@ map("n", "<A-9>", function() vim.cmd("BufferLineGoToBuffer 9") end)
 
 map("n", "<CA-Left>", function() vim.cmd("BufferLineMovePrev") end)
 map("n", "<CA-Right>", function() vim.cmd("BufferLineMoveNext") end)
-end
-Init()
 

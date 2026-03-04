@@ -21,12 +21,10 @@ opt.updatetime = 200
 opt.virtualedit = "block"
 opt.wildmode = "longest:full,full"
 opt.winminwidth = 5
--- opt.wrap = true
 opt.linebreak = true
 opt.shortmess:append("I")
 opt.linespace = 3
 opt.fillchars:append({ fold = " " })
-opt.mousemev = true
 
 opt.nu = true
 opt.autoindent = true
@@ -56,7 +54,7 @@ vim.diagnostic.config {
 vim.diagnostic.hide()
 
 opt.showmode = false
-vim.g.undotree_WindowLayout = 3
+vim.g.undotree_WindowLayout = 4
 vim.g.undotree_SplitWidth = 35
 opt.numberwidth = 1
 opt.colorcolumn = "110"
