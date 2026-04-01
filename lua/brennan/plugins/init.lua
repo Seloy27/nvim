@@ -13,12 +13,6 @@ return {
         opts = {}
     },
     {
-        "windwp/nvim-autopairs",
-        enabled = false,
-        event = "InsertEnter",
-        config = true
-    },
-    {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
         dependencies = { "nvim-lua/plenary.nvim" }
@@ -115,9 +109,5 @@ return {
     {
         'kdheepak/tabline.nvim',
         lazy = true
-    },
-	{
-		"karb94/neoscroll.nvim",
-		lazy = false
-	}
+    }
 }

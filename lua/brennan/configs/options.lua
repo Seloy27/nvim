@@ -9,7 +9,7 @@ opt.grepprg = "rg --vimgrep"
 opt.ignorecase = true
 opt.inccommand = "nosplit"
 opt.jumpoptions = "view"
-opt.mouse = ""
+opt.mouse = "a"
 opt.number = true
 opt.relativenumber = true
 opt.ruler = false
@@ -25,11 +25,14 @@ opt.linebreak = true
 opt.shortmess:append("I")
 opt.linespace = 3
 opt.fillchars:append({ fold = " " })
+opt.list = false
+opt.listchars = "tab:»·,space:·,trail:·"
 
 opt.nu = true
-opt.autoindent = true
-opt.smartindent = true
-opt.expandtab = false
+opt.autoindent = false
+opt.smartindent = false
+opt.smarttab = true
+opt.expandtab = true
 
 opt.swapfile = false
 opt.backup = false
