@@ -15,7 +15,7 @@ map("n", "<leader>fa", function()
 end)
 
 map("n", "<leader>fw", function()
-	builtin.current_buffer_fuzzy_find({
+    builtin.current_buffer_fuzzy_find({
         layout_config = {
             horizontal = {
                 width = 120,
@@ -26,7 +26,7 @@ map("n", "<leader>fw", function()
 end)
 
 map("n", "<leader>ff", function()
-	builtin.find_files({
+    builtin.find_files({
         previewer = false,
         layout_config = {
             horizontal = {
@@ -38,7 +38,7 @@ map("n", "<leader>ff", function()
 end)
 
 map("n", "<leader>fg", function()
-	builtin.live_grep({
+    builtin.live_grep({
         layout_config = {
             horizontal = {
                 width = 120,
@@ -49,27 +49,27 @@ map("n", "<leader>fg", function()
 end)
 
 map("n", "<leader>fb", function()
-	builtin.buffers()
+    builtin.buffers()
 end)
 
 map("n", "<leader>fd", function()
-	builtin.diagnostics({
+    builtin.diagnostics({
         bufnr = 0,
         previewer = false
     })
 end)
 
 map("n", "<leader>fD", function()
-	builtin.diagnostics()
+    builtin.diagnostics()
 end)
 
 require("telescope").setup({
-	defaults = {
-		layout_config = {
-			prompt_position = "top",
-		},
-		sorting_strategy = "ascending",
-	},
+    defaults = {
+        layout_config = {
+            prompt_position = "top",
+        },
+        sorting_strategy = "ascending",
+    },
 
     pickers = {
 

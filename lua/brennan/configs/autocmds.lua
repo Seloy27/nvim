@@ -40,6 +40,25 @@ autocmd(
         end
     }
 )
+
+autocmd(
+    "InsertEnter",
+    {
+        pattern = "*",
+        callback = function()
+            vim.cmd("IBLDisableScope")
+        end
+    }
+)
+autocmd(
+    "InsertLeave",
+    {
+        pattern = "*",
+        callback = function()
+            vim.cmd("IBLEnableScope")
+        end
+    }
+)
 end
 au()
 

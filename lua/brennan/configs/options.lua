@@ -33,6 +33,8 @@ opt.autoindent = false
 opt.smartindent = false
 opt.smarttab = true
 opt.expandtab = true
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 
 opt.swapfile = false
 opt.backup = false

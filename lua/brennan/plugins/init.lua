@@ -15,7 +15,11 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
-        dependencies = { "nvim-lua/plenary.nvim" }
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            -- optional but recommended
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+        }
     },
     {
         "ThePrimeagen/harpoon"
@@ -84,6 +88,7 @@ return {
     },
     {
         "folke/snacks.nvim",
+        enabled = false,
         lazy = false
     },
     {
@@ -109,5 +114,9 @@ return {
     {
         'kdheepak/tabline.nvim',
         lazy = true
+    },
+    {
+        "idr4n/andromeda.nvim",
+        lazy = true,
     }
 }

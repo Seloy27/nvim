@@ -5,12 +5,6 @@
 --  SETUPS
 -- =================================================================================================
 
-rose_pine = "rose-pine"
-rose_pine_moon = "rose_pine_moon"
-rose_pine_dawn = "rose_pine_dawn"
-rose_pine_main = "rose_pine_main"
-onedark = "onedark"
-
 
 local rose_pine = require("rose-pine")
 
@@ -119,8 +113,6 @@ vim.opt.guicursor = "n-i-v-c:block"
 vim.cmd.colorscheme('rose-pine')
 -- vim.cmd.colorscheme('onedark')
 
--- FUNCTION DEFINTIONS
-
 function Color(color)
     color = color or "rose-pine-main"
     vim.cmd.colorscheme(color)
@@ -130,36 +122,4 @@ function Color(color)
     return true;
 end
 Color()
-
-function CursorBlink(state)
-    local sleep = 200
-
-    function CASE1()
-        vim.defer_fn(function()
-
-            vim.api.nvim_set_hl(0, "Cursor", {
-                bg = "#e0def4"
-            })
-            CASE2()
-        end, sleep)
-    end
-
-    function CASE2()
-        vim.defer_fn(function()
-
-            vim.api.nvim_set_hl(0, "Cursor", {
-                bg = "#eb6f92"
-            })
-            CASE1()
-        end, sleep)
-    end
-    CASE1()
-
-    vim.opt.guicursor = "n-i-v-c:block-Cursor,"
-
-    if (state == false) then
-        vim.opt.guicursor = "n-i-v-c:block"
-    end
-end
-CursorBlink(false)
 
