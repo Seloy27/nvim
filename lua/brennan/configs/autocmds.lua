@@ -1,6 +1,8 @@
 
 local autocmd = vim.api.nvim_create_autocmd
 
+-- GLobal Autcmds
+
 local function au()
 autocmd(
     "UIEnter",
@@ -18,44 +20,6 @@ autocmd(
                     -- require("harpoon.ui").nav_file(1)
                 end, 1)
             end
-        end
-    }
-)
-
-autocmd(
-    "BufEnter",
-    {
-        pattern = "*.html",
-        callback = function ()
-            vim.opt.wrap = false
-        end
-    }
-)
-autocmd(
-    "BufLeave",
-    {
-        pattern = "*.html",
-        callback = function ()
-            vim.opt.wrap = true
-        end
-    }
-)
-
-autocmd(
-    "InsertEnter",
-    {
-        pattern = "*",
-        callback = function()
-            vim.cmd("IBLDisableScope")
-        end
-    }
-)
-autocmd(
-    "InsertLeave",
-    {
-        pattern = "*",
-        callback = function()
-            vim.cmd("IBLEnableScope")
         end
     }
 )

@@ -14,6 +14,7 @@ return {
     },
     {
         "nvim-telescope/telescope.nvim",
+        lazy = true,
         tag = "0.1.8",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -72,7 +73,7 @@ return {
     },
     {
         "mbbill/undotree",
-        lazy = false
+        lazy = true
     },
     {
         "L3MON4D3/LuaSnip",
@@ -118,5 +119,17 @@ return {
     {
         "idr4n/andromeda.nvim",
         lazy = true,
+    },
+    {
+        'prichrd/netrw.nvim',
+        lazy = false
+    },
+    {
+        'brenoprata10/nvim-highlight-colors',
+        lazy = true
+    },
+    {
+        'NTBBloodbath/color-converter.nvim',
+        lazy = true
     }
 }

@@ -29,7 +29,7 @@ local Cnode = { "compound_statement" }
 
 require("ibl").setup({
     scope = {
-        enabled = true,
+        enabled = false,
         show_start = true,
         show_end = true,
         show_exact_scope = false,
@@ -54,4 +54,46 @@ require("ibl").setup({
         highlight = "Highlight_Med",
     },
 })
+
+function ToggleScope()
+
+    if not SCOPE_DEFINE then
+        SCOPE_DEFINE = true
+        SCOPE_DisableAut = vim.api.nvim_create_autocmd(
+            "InsertEnter",
+            {
+                pattern = "*",
+                callback = function()
+                    vim.cmd("IBLDisableScope")
+                end
+            }
+        )
+        SCOPE_EnableAut = vim.api.nvim_create_autocmd(
+            "InsertLeave",
+            {
+                pattern = "*",
+                callback = function()
+                    vim.cmd("IBLEnableScope")
+                end
+            }
+        )
+        vim.cmd("IBLEnableScope")
+    else
+        SCOPE_DEFINE = nil
+        vim.api.nvim_del_autocmd(SCOPE_DisableAut)
+        vim.api.nvim_del_autocmd(SCOPE_EnableAut)
+        vim.cmd("IBLDisableScope")
+    end
+
+end
+
+vim.api.nvim_create_autocmd(
+    "FileType",
+    {
+        pattern = "*.md *.rst",
+        callback = function()
+            
+        end
+    }
+)
 

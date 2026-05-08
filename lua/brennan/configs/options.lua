@@ -27,6 +27,7 @@ opt.linespace = 3
 opt.fillchars:append({ fold = " " })
 opt.list = false
 opt.listchars = "tab:»·,space:·,trail:·"
+opt.wrap = true
 
 opt.nu = true
 opt.autoindent = false
