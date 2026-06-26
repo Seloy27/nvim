@@ -28,7 +28,7 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         lazy = true,
-        dependencies = { "nvim-tree/nvim-web-devicons" }
+        -- dependencies = { "nvim-tree/nvim-web-devicons" }
     },
     {
         -- LSP Support
@@ -73,7 +73,7 @@ return {
     },
     {
         "mbbill/undotree",
-        lazy = true
+        lazy = false
     },
     {
         "L3MON4D3/LuaSnip",
@@ -109,27 +109,37 @@ return {
     },
     {
         'akinsho/bufferline.nvim',
-        lazy = true
-        -- enabled = false
+        lazy = true,
+        enabled = false
     },
     {
         'kdheepak/tabline.nvim',
         lazy = true
     },
     {
-        "idr4n/andromeda.nvim",
-        lazy = true,
+        "nobbmaestro/nvim-andromeda",
+        lazy = false,
+        dependencies = {
+            "tjdevries/colorbuddy.nvim"
+        }
     },
     {
-        'prichrd/netrw.nvim',
-        lazy = false
+        "uga-rosa/ccc.nvim",
+        lazy = true
     },
     {
         'brenoprata10/nvim-highlight-colors',
-        lazy = true
+        lazy = true,
+        enabled = false
     },
     {
-        'NTBBloodbath/color-converter.nvim',
-        lazy = true
+        "xero/miasma.nvim",
+        lazy = false,
+        priority = 1000
+    },
+    {
+        "thesimonho/kanagawa-paper.nvim",
+        lazy = false,
+        priority = 1000
     }
 }

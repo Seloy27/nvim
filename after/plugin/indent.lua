@@ -88,11 +88,21 @@ function ToggleScope()
 end
 
 vim.api.nvim_create_autocmd(
-    "FileType",
+    "BufWinEnter",
     {
-        pattern = "*.md *.rst",
+        pattern = "*.md,Makefile",
         callback = function()
-            
+            vim.cmd("IBLDisable")
+        end
+    }
+)
+
+vim.api.nvim_create_autocmd(
+    "BufWinLeave",
+    {
+        pattern = "*.md,Makefile",
+        callback = function()
+            vim.cmd("IBLEnable")
         end
     }
 )

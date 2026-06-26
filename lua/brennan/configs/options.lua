@@ -34,8 +34,8 @@ opt.autoindent = false
 opt.smartindent = false
 opt.smarttab = true
 opt.expandtab = true
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 
 opt.swapfile = false
 opt.backup = false
@@ -57,7 +57,6 @@ vim.diagnostic.config {
   signs = false,
   underline = true,
 }
-vim.diagnostic.hide()
 
 opt.showmode = false
 vim.g.undotree_WindowLayout = 4

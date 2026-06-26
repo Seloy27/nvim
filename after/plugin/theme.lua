@@ -73,7 +73,7 @@ rose_pine.setup({
         -- Comment = { fg = "foam" },
         -- StatusLine = { fg = "love", bg = "foam", blend = 15 },
         -- VertSplit = { fg = "love", bg = "love" },
-        -- Visual = { fg = "base", bg = "foam", inherit = false },
+        Visual = { fg = "base", bg = "foam", inherit = false },
     },
 
     before_highlight = function(group, highlight, palette)
@@ -103,23 +103,49 @@ require("onedark").setup({
     }
 })
 
+require("kanagawa-paper").setup({
+    gutter = false,
+
+    styles = {
+        -- style for comments
+        comment = { italic = true },
+        -- style for functions
+        functions = { italic = false },
+        -- style for keywords
+        keyword = { italic = false, bold = false },
+        -- style for statements
+        statement = { italic = false, bold = false },
+        -- style for types
+        type = { italic = false }
+    }
+
+})
+
+require("andromeda").setup({
+    -- transparent_bg = true
+})
 
 -- =================================================================================================
 -- =================================================================================================
 
 -- DEFAULT CALLS
 
+-- vim.cmd.colorscheme"rose-pine-main"
 vim.opt.guicursor = "n-i-v-c:block"
-vim.cmd.colorscheme('rose-pine')
--- vim.cmd.colorscheme('onedark')
 
 function Color(color)
-    color = color or "rose-pine-main"
-    vim.cmd.colorscheme(color)
 
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none", })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", })
-    return true;
+    if (color ~= nil) then
+        -- Change the "__CURRENT_THEME__" Global Variable with file manipulation in Lua
+        __CURRENT_THEME__ = color
+
+        vim.cmd.colorscheme(color)
+        vim.api.nvim_set_hl(0, "Normal", { bg = "none", })
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", })
+    else
+        vim.api.nvim_set_hl(0, "Normal", { bg = "none", })
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", })
+    end
+
 end
-Color()
-
+Color("rose-pine-moon")

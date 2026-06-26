@@ -1,24 +1,58 @@
 
 local autocmd = vim.api.nvim_create_autocmd
 
--- GLobal Autcmds
+-- Global Autcmds
 
 local function au()
+-- autocmd(
+--     "UIEnter",
+--     {
+--         pattern = "*",
+--         once = true,
+--         callback = function()
+--             if vim.bo.filetype == "netrw" then
+--                 vim.defer_fn(function()
+--                     for i = 1, 50 do
+--                         require("harpoon.ui").nav_file(i)
+--                     end
+--                     vim.cmd("Ex")
+--                     vim.cmd("bd 1") -- only if netrw
+--                     -- require("harpoon.ui").nav_file(1)
+--                 end, 1)
+--             end
+--         end
+--     }
+-- )
+
 autocmd(
-    "UIEnter",
+    "BufEnter",
+    {
+        pattern = "*.html",
+        callback = function()
+            vim.o.wrap = false
+        end
+    }
+)
+
+autocmd(
+    "BufLeave",
+    {
+        pattern = "*.html",
+        callback = function ()
+            vim.o.wrap = true
+        end
+    }
+)
+
+autocmd(
+    "BufEnter",
     {
         pattern = "*",
-        once = true,
         callback = function()
-            if vim.bo.filetype == "netrw" then
-                vim.defer_fn(function()
-                    for i = 1, 50 do
-                        require("harpoon.ui").nav_file(i)
-                    end
-                    vim.cmd("Ex")
-                    vim.cmd("bd 1") -- only if netrw
-                    -- require("harpoon.ui").nav_file(1)
-                end, 1)
+            if not vim.o.expandtab then
+                vim.cmd("IBLDisable")
+            else
+                vim.cmd("IBLEnable")
             end
         end
     }

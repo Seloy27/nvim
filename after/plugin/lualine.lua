@@ -11,8 +11,6 @@ local function TabCheck()
     else 
         return "Tabs:"..tabstop
     end
-
-    return "undefined"
 end
 
 lualine.setup({

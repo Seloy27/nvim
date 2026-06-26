@@ -2,10 +2,6 @@ local map = vim.keymap.set
 local builtin = require("telescope.builtin")
 local outline = require("outline")
 
-map("n", "<leader>ft", function()
-    builtin.colorscheme()
-end)
-
 map("n", "<leader>fa", function()
     builtin.find_files({
         follow = true,
@@ -19,7 +15,7 @@ map("n", "<leader>fw", function()
         layout_config = {
             horizontal = {
                 width = 120,
-                preview_width = 70
+                preview_width = 80
             }
         }
     })
@@ -65,6 +61,8 @@ end)
 
 require("telescope").setup({
     defaults = {
+        color_devicons = false,
+
         layout_config = {
             prompt_position = "top",
         },
